@@ -17,9 +17,11 @@ head(activity)
 
 ###Process/transform the data (if necessary) into a format suitable for your analysis
 ### Fix date format.
+
+```{r}
 library(lattice)
 activity$date <- as.Date(activity$date, "%Y-%m-%d")
-
+```
 # --------------------------------------------------
 ## What is mean total number of steps taken per day?
 
