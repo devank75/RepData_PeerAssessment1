@@ -114,11 +114,6 @@ activity$dayType <- as.factor(sapply(activity$date, dayType))
 ### and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).
 ```{r}
 stepsByDay <- aggregate(steps ~ interval + dayType, data = activity, mean)
-#xyplot(steps ~ interval | dayType, stepsByDay, type = "l", 
-#      layout = c(1, 2), xlab = "Interval", ylab = "Number of steps")
-
-# Above xyplot is producing perfectly file time series plots (please see the 'Last time series plot.png')
-# I have no idea why it Knit HTML is giving error saying - could not find function "xyplot"
-# Please let me know if you know the reason :)
-
+xyplot(steps ~ interval | dayType, stepsByDay, type = "l", 
+     layout = c(1, 2), xlab = "Interval", ylab = "Number of steps")
 ```
